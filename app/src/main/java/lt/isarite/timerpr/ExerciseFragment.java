@@ -33,18 +33,36 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
     String from[] = {"firstLine", "secondLine"};
     String firstLine[] = {"Push ups", "Sit ups", "Pull ups"};
     String secondLine[] = {"chest and triceps", "Middle abs","Back"};
-    FloatingActionButton button;
+    Exercise selected;
+    int prev = -1;
+    ArrayList<Exercise> exercises;
+    FloatingActionButton addButton, editButton;
     int[] to = {R.id.eFirstLine, R.id.eSecondLine};
     @Override
     @Nullable
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View myView = inflater.inflate(R.layout.fragment_exercise, container, false);
-        button = (FloatingActionButton) myView.findViewById(R.id.addEButton);
-        button.setOnClickListener(this);
-        button.setOnClickListener(new View.OnClickListener() {
+        addButton = (FloatingActionButton) myView.findViewById(R.id.addEButton);
+        addButton.setOnClickListener(this);
+        addButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
+                startActivity(k);
+            }
+        });
+
+        editButton = (FloatingActionButton) myView.findViewById(R.id.editEButton);
+        editButton.setOnClickListener(this);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
+                k.putExtra("EXERCISE_NAME", "");
+                k.putExtra("EXERCISE_ID", "");
+                k.putExtra("EXERCISE_MUSCLE", "");
+                k.putExtra("EXERCISE_DESCRIPTION", "");
+
+
                 startActivity(k);
             }
         });
@@ -77,13 +95,24 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
         simpleListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Object o = simpleListView.getItemAtPosition(position);
-                SimpleAdapter str = (SimpleAdapter) o; //As you are using Default String Adapter
-                //Toast.makeText(getBaseContext(),str.getTitle(),Toast.LENGTH_SHORT).show();
-                button.hide();
-                Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
-                view.setSelected(true);
-                //startActivity(k);
+                if(position!=prev) {
+                    Object o = simpleListView.getItemAtPosition(position);
+                    //selected = exercises.get(position);
+
+                    SimpleAdapter str = (SimpleAdapter) o; //As you are using Default String Adapter
+                    //Toast.makeText(getBaseContext(),str.getTitle(),Toast.LENGTH_SHORT).show();
+                    addButton.hide();
+                    editButton.show();
+                    //Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
+                    view.setSelected(true);
+                    //startActivity(k);
+                    prev = position;
+                }else{
+                    prev = -1;
+                    view.setSelected(false);
+                    addButton.show();
+                    editButton.hide();
+                }
             }
         });
 

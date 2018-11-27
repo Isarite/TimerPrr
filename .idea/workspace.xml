@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
@@ -10,6 +15,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b2b76ec4-d838-4759-b51f-64b5eec7e5a2" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Exercise.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Link.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Workout.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/ExerciseFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/ExerciseFragment.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutDatabaseHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutDatabaseHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -42,21 +53,79 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WorkoutDatabaseHandler.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WorkoutDatabaseHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutDatabaseHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
-              <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+            <state relative-caret-position="893">
+              <caret line="109" column="1" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+              <folding>
+                <element signature="method#WorkoutDatabaseHandler#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#onUpgrade#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#onCreate#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#addExercise#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#getExercise#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#getAllExercises#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#deleteExercise#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#updateExercise#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#addWorkout#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#getWorkoutLinks#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#getAllWorkouts#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#deleteWorkout#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#addLink#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#getLink#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#deleteLink#0;class#WorkoutDatabaseHandler#0" />
+                <element signature="method#updateLink#0;class#WorkoutDatabaseHandler#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ExerciseFragment.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/ExerciseFragment.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+              <folding>
+                <element signature="e#3540#4336#0" expanded="true" />
+                <element signature="e#4335#4336#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exercise.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Exercise.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Workout.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Workout.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="76">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>\n</find>
       <find>\t</find>
+      <find>LINK_</find>
+      <find>view</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -2325,7 +2394,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/TimerPr.iml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Workout.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Exercise.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutDatabaseHandler.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Link.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/ExerciseFragment.java" />
       </list>
     </option>
   </component>
@@ -2340,7 +2413,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2361,18 +2436,28 @@
             </path>
             <path>
               <item name="TimerPrr" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="TimerPrr" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
+            </path>
+            <path>
+              <item name="TimerPrr" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
+    <property name="device.picker.selection" value="02689560c39a320a" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -2408,7 +2493,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
@@ -2518,8 +2603,8 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5005365" side_tool="true" visible="true" weight="0.32937366" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946353" weight="0.32937366" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32937366" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info anchor="bottom" id="Logcat" order="7" weight="0.32937366" />
@@ -2527,7 +2612,6 @@
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.32937366" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32937366" />
       <window_info anchor="right" id="Gradle" order="3" />
@@ -2536,6 +2620,7 @@
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -2547,6 +2632,38 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TimerPr.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="55" selection-start-line="14" selection-start-column="55" selection-end-line="14" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutDatabaseHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="method#WorkoutDatabaseHandler#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#onUpgrade#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#onCreate#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#addExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getAllExercises#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#deleteExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#updateExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#addWorkout#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getWorkoutLinks#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getAllWorkouts#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#deleteWorkout#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#addLink#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getLink#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#deleteLink#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#updateLink#0;class#WorkoutDatabaseHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TimerPr.iml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
@@ -2568,10 +2685,89 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutEditActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutDatabaseHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
-          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+        <state relative-caret-position="893">
+          <caret line="109" column="1" selection-start-line="109" selection-start-column="1" selection-end-line="109" selection-end-column="1" />
+          <folding>
+            <element signature="method#WorkoutDatabaseHandler#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#onUpgrade#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#onCreate#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#addExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getAllExercises#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#deleteExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#updateExercise#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#addWorkout#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getWorkoutLinks#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getAllWorkouts#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#deleteWorkout#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#addLink#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#getLink#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#deleteLink#0;class#WorkoutDatabaseHandler#0" />
+            <element signature="method#updateLink#0;class#WorkoutDatabaseHandler#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Link.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="41" column="39" lean-forward="true" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_workout_edit.xml">
+      <provider editor-type-id="text-editor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/WorkoutFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Exercise.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/Workout.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-28/android/os/Binder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="696" selection-start-line="696" selection-end-line="696" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/lt/isarite/timerpr/ExerciseFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="99" column="22" selection-start-line="99" selection-start-column="22" selection-end-line="99" selection-end-column="22" />
+          <folding>
+            <element signature="e#3540#4336#0" expanded="true" />
+            <element signature="e#4335#4336#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
