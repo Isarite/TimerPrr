@@ -12,7 +12,7 @@ public class WorkoutDatabaseHandler extends SQLiteOpenHelper {
     String EXERCISE_ID = "id";
     String EXERCISE_NAME = "name";
     String EXERCISE_MUSCLE = "muscle";
-    String EXERCISE_DESC = "desc";
+    String EXERCISE_DESC = "description";
 
     String LINK_ID = "id";
     String LINK_NUMBER = "number";
@@ -41,43 +41,44 @@ public class WorkoutDatabaseHandler extends SQLiteOpenHelper {
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String query2 = "CREATE TABLE " + SCORES_TABLE_NAME + "(" +
-                KEY_ID + " INTEGER PRIMARY KEY," +
-                KEY_NAME + " TEXT," +
-                KEY_SCORE + " INTEGER" +
-                ")";
-        String query = "" +
-                "CREATE TABLE " +"Exercise" +
+        String exercise = "" +
+                "CREATE TABLE " +EXERCISE_TABLE_NAME +
                 "(" +
-                "id integer NOT NULL," +
-                "name TEXT NOT NULL," +
-                "muscle TEXT," +
-                "description TEXT," +
-                "PRIMARY KEY(id)" +
-                ");" +
-                "CREATE TABLE Workout" +
+                EXERCISE_ID + " integer NOT NULL," +
+                EXERCISE_NAME + " TEXT NOT NULL," +
+                EXERCISE_MUSCLE + " TEXT," +
+                EXERCISE_DESC+" TEXT," +
+                "PRIMARY KEY("+EXERCISE_ID+")" +
+                ");";
+        String workout = "" +
+                "CREATE TABLE "+WORKOUT_TABLE_NAME +
                 "(" +
-                "name TEXT NOT NULL," +
-                "PRIMARY KEY(name)" +
-                ");" +
-                "CREATE TABLE Link" +
+                WORKOUT_NAME + " TEXT NOT NULL," +
+                "PRIMARY KEY(" + WORKOUT_NAME + ")" +
+                ");";
+        String link = "" +
+        "CREATE TABLE "+LINK_TABLE_NAME+
                 "(" +
-                "number integer NOT NULL," +
-                "duration real," +
-                "type TEXT NOT NULL," +
-                "restin real," +
-                "restafter real," +
-                "sets integer NOT NULL," +
-                "reps integer NOT NULL," +
-                "id integer NOT NULL," +
-                "fk_ExerciseId integer," +
-                "fk_WorkoutName TEXT NOT NULL," +
-                "PRIMARY KEY(id)," +
-                "FOREIGN KEY(fk_ExerciseId) REFERENCES Exercise (id)," +
-                "FOREIGN KEY(fk_WorkoutName) REFERENCES Workout (name)" +
+                LINK_NUMBER+ " integer NOT NULL," +
+                LINK_DURATION+" real," +
+                LINK_TYPE+" TEXT NOT NULL," +
+                LINK_RESTIN+" real," +
+                LINK_RESTAFTER+" real," +
+                LINK_SETS+" integer NOT NULL," +
+                LINK_REPS+" integer NOT NULL," +
+                LINK_ID+" integer NOT NULL," +
+                LINK_FK_EXERCISE+" integer," +
+                LINK_FK_WORKOUT+" TEXT NOT NULL," +
+                "PRIMARY KEY("+LINK_ID+")," +
+                "FOREIGN KEY("+LINK_FK_EXERCISE+") REFERENCES "+EXERCISE_TABLE_NAME+" ("+EXERCISE_ID+")," +
+                "FOREIGN KEY("+LINK_FK_WORKOUT+") REFERENCES "+WORKOUT_TABLE_NAME+" ("+WORKOUT_NAME+")" +
                 ");";
 
-        db.execSQL(query);
+
+        db.execSQL(exercise);
+        db.execSQL(workout);
+        db.execSQL(link);
+
 
     }
 
