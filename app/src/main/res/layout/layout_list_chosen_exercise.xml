@@ -14,7 +14,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:maxLines="1"
-        android:text="Exercise muscle groups"
+        android:text="Exercise parameters"
         android:textSize="12sp" />
 
     <TextView

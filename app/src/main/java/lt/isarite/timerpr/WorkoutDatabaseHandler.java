@@ -140,7 +140,7 @@ public class WorkoutDatabaseHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getReadableDatabase();
 
-        String query = "SELECT * FROM " + EXERCISE_TABLE_NAME + " ORDER BY " + EXERCISE_NAME + " ASC";
+        String query = "SELECT * FROM " + EXERCISE_TABLE_NAME + " ORDER BY " + EXERCISE_ID + " ASC";
 
         Cursor cursor = db.rawQuery(query, null);
 

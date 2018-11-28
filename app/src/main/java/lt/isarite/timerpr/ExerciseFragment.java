@@ -19,14 +19,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link ExerciseFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link ExerciseFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ExerciseFragment extends Fragment implements View.OnClickListener {
 
     ListView simpleListView;
@@ -36,7 +29,7 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
     Exercise selected;
     int prev = -1;
     ArrayList<Exercise> exercises;
-    FloatingActionButton addButton, editButton;
+    FloatingActionButton addButton, editButton, deleteButton;
     int[] to = {R.id.eFirstLine, R.id.eSecondLine};
     @Override
     @Nullable
@@ -52,21 +45,33 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
             }
         });
 
+        deleteButton = (FloatingActionButton) myView.findViewById(R.id.deleteEButton);
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                WorkoutDatabaseHandler databaseHandler = new WorkoutDatabaseHandler(getActivity());
+                databaseHandler.deleteExercise(exercises.get(prev).ID);
+                listItems();
+            }
+        });
+
         editButton = (FloatingActionButton) myView.findViewById(R.id.editEButton);
         editButton.setOnClickListener(this);
         editButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
-                k.putExtra("EXERCISE_NAME", "");
-                k.putExtra("EXERCISE_ID", "");
-                k.putExtra("EXERCISE_MUSCLE", "");
-                k.putExtra("EXERCISE_DESCRIPTION", "");
+                Exercise exercise = exercises.get(prev);
+                k.putExtra("EXERCISE_NAME",exercise.name);
+                k.putExtra("EXERCISE_ID", exercise.ID);
+                k.putExtra("EXERCISE_MUSCLE", exercise.muscle);
+                k.putExtra("EXERCISE_DESCRIPTION", exercise.description);
 
 
                 startActivity(k);
             }
         });
         return myView;
+
+
 
 
 
@@ -81,12 +86,17 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
 
     void listItems(){
         simpleListView=(ListView)getView().findViewById(R.id.exercise_list);
+        simpleListView.setSelector(R.drawable.selector);
         ArrayList<HashMap<String,String>> arrayList=new ArrayList<>();
-        for (int i=0;i<firstLine.length;i++)
+        WorkoutDatabaseHandler databaseHandler = new WorkoutDatabaseHandler(getActivity());
+        exercises = databaseHandler.getAllExercises();
+        for (int i=0;i<exercises.size();i++)
         {
             HashMap<String,String> hashMap=new HashMap<>();//create a hashmap to store the data in key value pair
-            hashMap.put(from[0],firstLine[i]);
-            hashMap.put(from[1],secondLine[i]);
+            //hashMap.put(from[0],firstLine[i]);
+            //hashMap.put(from[1],secondLine[i]);
+            hashMap.put(from[0],exercises.get(i).name);
+            hashMap.put(from[1],exercises.get(i).muscle);
             arrayList.add(hashMap);//add the hashmap into arrayList
         }
         final SimpleAdapter simpleAdapter=new SimpleAdapter(getContext(),arrayList,R.layout.layout_list_exercise,from,to);//Create object and set the parameters for simpleAdapter
@@ -103,6 +113,7 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
                     //Toast.makeText(getBaseContext(),str.getTitle(),Toast.LENGTH_SHORT).show();
                     addButton.hide();
                     editButton.show();
+                    deleteButton.show();
                     //Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
                     view.setSelected(true);
                     //startActivity(k);
@@ -112,6 +123,7 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
                     view.setSelected(false);
                     addButton.show();
                     editButton.hide();
+                    deleteButton.hide();
                 }
             }
         });
@@ -124,10 +136,13 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
     }
 
-    public void createNewExercise(){
-        Intent k = new Intent(getContext(), ExerciseEditActivity.class);
-        startActivity(k);
+    @Override
+    public void onResume() {
+        prev = -1;
+        listItems();
+        super.onResume();
     }
+
 
     @Override
     public void onClick(View v) {

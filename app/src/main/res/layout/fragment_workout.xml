@@ -12,7 +12,6 @@
         android:layout_height="match_parent"
         android:background="@drawable/bg_key"
         android:choiceMode="singleChoice"
-        android:listSelector="@color/pressed_color"
         android:visibility="visible" />
 
     <android.support.constraint.ConstraintLayout
@@ -29,7 +28,7 @@
             android:layout_marginTop="8dp"
             android:clickable="false"
             android:src="@android:drawable/ic_menu_edit"
-            android:visibility="gone"
+            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.970"
