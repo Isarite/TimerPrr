@@ -115,6 +115,7 @@ public class WorkoutFragment extends Fragment {
                     addButton.hide();
                     editButton.show();
                     playButton.show();
+                    deleteButton.show();
                     //Intent k = new Intent(getActivity(), ExerciseEditActivity.class);
                     //simpleListView.setSelection(position);
                     //startActivity(k);
@@ -127,6 +128,7 @@ public class WorkoutFragment extends Fragment {
                     addButton.show();
                     editButton.hide();
                     playButton.hide();
+                    deleteButton.hide();
                     simpleListView.requestLayout();
                 }
             }
@@ -147,6 +149,7 @@ public class WorkoutFragment extends Fragment {
         simpleListView.requestLayout();
         playButton.hide();
         editButton.hide();
+        deleteButton.hide();
         addButton.show();
         listItems();
         super.onResume();

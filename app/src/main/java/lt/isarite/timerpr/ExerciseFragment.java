@@ -139,6 +139,9 @@ public class ExerciseFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onResume() {
         prev = -1;
+        deleteButton.hide();
+        editButton.hide();
+        addButton.show();
         listItems();
         super.onResume();
     }

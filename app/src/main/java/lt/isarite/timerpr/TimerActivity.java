@@ -3,11 +3,13 @@ package lt.isarite.timerpr;
 import android.content.Intent;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
+import android.os.Build;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -27,6 +29,7 @@ public class TimerActivity extends AppCompatActivity {
     boolean rest = false;
     TextView exercise;
     long startMil;
+    int start;
     int progress = 0;
 
 
@@ -60,7 +63,7 @@ public class TimerActivity extends AppCompatActivity {
 
             timerTextView.setText(String.format("%d:%02d", minutes, seconds));
             Handler progressBarHandler = new Handler();
-            progress = (int)(startMil/1000)*(seconds + minutes*10);
+            progress = (seconds + minutes*60)*100/start;
             progressBarHandler .post(new Runnable() {
                 public void run() {
                     circle.setMax(100);
@@ -76,9 +79,21 @@ public class TimerActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer);
+
+
+        if (Build.VERSION.SDK_INT < 16) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                    WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        }else{
+            View decorView = getWindow().getDecorView();
+// Hide the status bar.
+            int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
         circle = findViewById(R.id.progressCircle);
         circle.setMax(100);
         circle.setProgress(0);
+        circle.setVisibility(View.GONE);
         Intent intent = getIntent();
         String workoutName = intent.getStringExtra("WORKOUT_NAME");
         WorkoutDatabaseHandler databaseHandler = new WorkoutDatabaseHandler(getApplicationContext());
@@ -132,13 +147,15 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     void setUpNext(){
+        circle.setVisibility(View.VISIBLE);
         if(rest) {
             set++;
         }
         b = findViewById(R.id.timerButton);
-        if(set!=links.get(number).sets){
+        if(links.size()!=0&&set!=links.get(number).sets){
             if(rest){
                 startMil = (long)links.get(number).restIn*1000;
+                start = (int)links.get(number).restIn;
                 startTime = startMil+System.currentTimeMillis();
                 timerHandler.postDelayed(timerRunnable, 0);
                 exercise = findViewById(R.id.timerExercise);
@@ -149,6 +166,7 @@ public class TimerActivity extends AppCompatActivity {
                     exercise = findViewById(R.id.timerExercise);
                     exercise.setText(exercises.get(number).name);
                     startMil = (long)links.get(number).duration*1000;
+                    start = (int)links.get(number).duration;
                     startTime = startMil+System.currentTimeMillis();
                     timerHandler.postDelayed(timerRunnable, 0);
                     setButtonText("stop");
@@ -158,6 +176,8 @@ public class TimerActivity extends AppCompatActivity {
                     exercise.setText(exercises.get(number).name);
                     timerTextView = findViewById(R.id.timer);
                     b = findViewById(R.id.timerButton);
+                    circle.setMax(100);
+                    circle.setProgress(100);
                     setButtonText("next");
 
                     timerTextView.setText(String.format("%d reps", links.get(number).reps));
@@ -166,7 +186,7 @@ public class TimerActivity extends AppCompatActivity {
 
 
         }else {
-            if(number>=links.size()-1){
+            if(links.size()==0&&number>=links.size()-1){
                 exercise.setVisibility(View.INVISIBLE);
                 TextView congrats = findViewById(R.id.congrats);
                 congrats.setText("Congratuliations! You've completed your workout.");
@@ -177,6 +197,7 @@ public class TimerActivity extends AppCompatActivity {
 
             }else {
                 startMil = (long)links.get(number).restAfter*1000;
+                start = (int)links.get(number).restAfter;
                 startTime = startMil + System.currentTimeMillis();
                 timerHandler.postDelayed(timerRunnable, 0);
                 exercise.setText("Rest");

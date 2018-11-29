@@ -20,13 +20,14 @@ import android.view.MenuItem;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new WorkoutFragment()).commit();
             navigationView.setCheckedItem(R.id.nav_workout);
+            toolbar.setTitle("Workouts");
         }
     }
 
@@ -72,9 +74,11 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.nav_workout) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new WorkoutFragment(), "WORKOUT").commit();
+            toolbar.setTitle("Workouts");
             // Handle the camera action
         } else if (id == R.id.nav_exercise) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ExerciseFragment(), "EXERCISE").commit();
+            toolbar.setTitle("Exercises");
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
