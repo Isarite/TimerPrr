@@ -6,4 +6,5 @@
         android:endColor="@color/colorAccent"
         android:startColor="@color/pressed_color"
         android:type="linear" />
+
 </shape>
