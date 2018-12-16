@@ -1,4 +1,4 @@
-#Simplistic Workout App
+# Simplistic Workout App
 
 *A workout app without any of the bells and whistles!*
 
