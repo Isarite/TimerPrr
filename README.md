@@ -1,4 +1,4 @@
-# Simplistic Workout App
+# Simplistic Workout Timer
 
 *A workout app without any of the bells and whistles!*
 
