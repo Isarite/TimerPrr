@@ -5,7 +5,7 @@
 ![Icon](app/src/main/res/mipmap-xxxhdpi/ic_launcher.png)
 ![First screenshot](screenshots/1.png) ![Second screenshot](screenshots/2.png) ![Third screenshot](screenshots/3.png)
 
-Have you ever wished that having a workout was not so needlessly complicated? Well, now it is no longer a pipe dream! Whether you work out at home, or in a gym, this app will help you achieve the results you seek without distracting you!
+Have you ever wished that having a workout was not so needlessly complicated? Well, now it is no longer a pipe dream! Whether you work out at home, or in a gym, this app will help you achieve the results you seek without distracting you! Simplistic Workout Timer is as it sounds. It is a simple app that lets you time your exercise routines without any of the fuss that comes in other apps. Just think up some exercises, make a workout and you're ready to go!
 
 # Features
 \*Built-in timer;
