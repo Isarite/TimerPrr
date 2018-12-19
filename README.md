@@ -16,6 +16,9 @@ Have you ever wished that having a workout was not so needlessly complicated? We
 
 \*Simple, easy to use interface;
 
+\*Open-source.
+
+
 # Usage
 
 Simply install the app, create new exercises, make a workout, and go wild! It's that easy!
